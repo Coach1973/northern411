@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智匯健康｜腦力長青｜2026失智防治與逆齡醫學跨界論壇</title>
+  <style>
+    :root{
+      --teal:#62c3c6;
+      --teal-deep:#1d8d95;
+      --teal-dark:#145e66;
+      --navy:#203657;
+      --navy-deep:#122238;
+      --bg:#f4f8f8;
+      --white:#ffffff;
+      --text:#22313f;
+      --muted:#617280;
+      --line:#dbe7e8;
+      --soft:#eef8f8;
+      --gold:#d8b06a;
+      --shadow:0 14px 34px rgba(18,34,56,.08);
+      --radius:18px;
+      --radius-lg:28px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+    .container{
+      width:min(1160px, calc(100% - 32px));
+      margin:0 auto;
+    }
+    section{padding:72px 0}
+    .section-title{
+      font-size:36px;
+      line-height:1.2;
+      font-weight:900;
+      color:var(--navy-deep);
+      margin-bottom:14px;
+    }
+    .section-subtitle{
+      font-size:16px;
+      color:var(--muted);
+      max-width:860px;
+      margin-bottom:28px;
+    }
+    .card{
+      background:var(--white);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(18,34,56,.06);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(18,34,56,.04) 0%, rgba(18,34,56,0) 16%),
+        radial-gradient(circle at top right, rgba(98,195,198,.16), transparent 30%),
+        linear-gradient(135deg, #eef4f7 0%, #ffffff 42%, #f4fbfb 100%);
+      padding:28px 0 56px;
+      border-bottom:1px solid rgba(18,34,56,.08);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:auto -120px -120px auto;
+      width:320px;
+      height:320px;
+      border-radius:50%;
+      background:rgba(98,195,198,.10);
+      filter:blur(10px);
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:6px;
+      background:linear-gradient(90deg, var(--navy-deep), var(--teal-deep), var(--gold));
+      opacity:.95;
+    }
+    .hero-shell{
+      position:relative;
+      padding:30px 32px 34px;
+      border-radius:32px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.98), rgba(245,251,252,.96));
+      border:1px solid rgba(18,34,56,.09);
+      box-shadow:0 24px 60px rgba(18,34,56,.10);
+    }
+    .hero-topline{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px;
+      margin-bottom:16px;
+    }
+    .hero-kicker{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:38px;
+      padding:8px 16px;
+      border-radius:999px;
+      background:rgba(29,141,149,.12);
+      color:var(--teal-dark);
+      border:1px solid rgba(29,141,149,.18);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.2px;
+      line-height:1.2;
+    }
+
+    .hero-official-line,
+    .hero-forum-line{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:9px 18px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:900;
+      letter-spacing:.2px;
+      line-height:1.35;
+      text-align:center;
+      width:100%;
+    }
+    .hero-official-line{
+      background:linear-gradient(135deg, rgba(32,54,87,.10), rgba(29,141,149,.12));
+      color:var(--navy-deep);
+      border:1px solid rgba(18,34,56,.12);
+      box-shadow:0 10px 24px rgba(18,34,56,.06);
+    }
+    .hero-forum-line{
+      background:rgba(29,141,149,.12);
+      color:var(--teal-dark);
+      border:1px solid rgba(29,141,149,.18);
+    }
+    .authority-strip{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:10px;
+    }
+    .authority-item{
+      padding:18px 16px;
+      border-radius:22px;
+      background:linear-gradient(180deg,#ffffff,#f7fbfc);
+      border:1px solid rgba(18,34,56,.08);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .authority-item .logo-image-wrap{
+      width:88px;
+      height:88px;
+      margin:0 auto 12px;
+    }
+    .authority-item .logo-name{
+      font-size:17px;
+      line-height:1.5;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:28px;
+      align-items:start;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:38px;
+      border-radius:999px;
+      padding:8px 16px;
+      font-size:13px;
+      font-weight:800;
+      color:var(--teal-dark);
+      background:rgba(29,141,149,.12);
+      border:1px solid rgba(29,141,149,.18);
+      margin-bottom:0;
+      line-height:1.2;
+    }
+    .hero-main-title{
+      font-size:72px;
+      line-height:1.02;
+      font-weight:900;
+      color:var(--navy);
+      letter-spacing:.5px;
+      margin-bottom:8px;
+      text-shadow:0 2px 0 rgba(255,255,255,.35);
+    }
+    .hero-main-en{
+      font-size:26px;
+      line-height:1.25;
+      color:var(--teal-dark);
+      font-weight:900;
+      letter-spacing:.3px;
+      margin-bottom:18px;
+    }
+    .hero-forum-title{
+      font-size:38px;
+      line-height:1.2;
+      font-weight:900;
+      color:var(--navy-deep);
+      margin-bottom:8px;
+      max-width:980px;
+    }
+    .hero-forum-en{
+      font-size:24px;
+      line-height:1.4;
+      color:var(--navy);
+      font-weight:800;
+      margin-bottom:22px;
+      max-width:920px;
+    }
+    .hero-meta{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:12px;
+      margin:22px 0 20px;
+    }
+    .hero-trustbar{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+      margin:0 0 24px;
+    }
+    .trust-chip{
+      background:#fff;
+      border:1px solid rgba(18,34,56,.08);
+      border-radius:16px;
+      padding:14px 16px;
+      box-shadow:0 10px 24px rgba(18,34,56,.05);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-trustbar .trust-chip:nth-child(2){
+      background:linear-gradient(135deg, rgba(29,141,149,.16), rgba(98,195,198,.20));
+      border:1px solid rgba(29,141,149,.26);
+      box-shadow:0 14px 28px rgba(29,141,149,.14);
+    }
+    .hero-trustbar .trust-chip:nth-child(2)::before{
+      content:"官方資訊";
+      position:absolute;
+      top:10px;
+      right:12px;
+      font-size:11px;
+      font-weight:900;
+      color:rgba(20,94,102,.78);
+      letter-spacing:.4px;
+    }
+    .trust-chip .k{
+      display:block;
+      font-size:13px;
+      color:var(--muted);
+      font-weight:800;
+      margin-bottom:4px;
+    }
+    .trust-chip .v{
+      display:block;
+      font-size:16px;
+      color:var(--navy);
+      font-weight:900;
+      line-height:1.45;
+    }
+    .hero-trustbar .trust-chip:nth-child(2) .k{
+      color:var(--teal-dark);
+    }
+    .hero-trustbar .trust-chip:nth-child(2) .v{
+      font-size:18px;
+      color:var(--navy-deep);
+    }
+    .hero-meta-item{
+      background:rgba(255,255,255,.86);
+      border:1px solid rgba(18,34,56,.10);
+      border-radius:14px;
+      padding:13px 15px;
+      font-size:15px;
+    }
+    .hero-meta-item strong{
+      color:var(--navy);
+      margin-right:8px;
+    }
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:50px;
+      padding:13px 24px;
+      border-radius:999px;
+      font-size:15px;
+      font-weight:900;
+      border:none;
+      transition:.2s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{
+      background:linear-gradient(135deg, var(--teal-deep), var(--teal));
+      color:#fff;
+      box-shadow:0 12px 26px rgba(29,141,149,.22);
+    }
+    .btn-secondary{
+      background:linear-gradient(135deg, var(--teal-deep), var(--teal));
+      color:#fff;
+      box-shadow:0 12px 26px rgba(29,141,149,.22);
+      border:none;
+    }
+
+    .hero-panels{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:28px;
+    }
+    .hero-panel{
+      border-radius:24px;
+      padding:22px 20px;
+      color:var(--navy);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(29,141,149,.16);
+      background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(233,247,247,.98));
+    }
+    .hero-panel h3{
+      font-size:20px;
+      font-weight:900;
+      margin-bottom:10px;
+      color:var(--navy-deep);
+    }
+    .hero-panel ul{
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .hero-panel li{
+      font-size:15px;
+      line-height:1.65;
+      padding-bottom:10px;
+      border-bottom:1px dashed rgba(31,53,86,.16);
+      color:var(--text);
+    }
+    .hero-panel li:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+    .hero-panel.dark{
+      background:rgba(18,34,56,.92);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .hero-panel.dark h3{ color:#fff; }
+    .hero-panel.dark li{
+      color:rgba(255,255,255,.94);
+      border-bottom:1px dashed rgba(255,255,255,.24);
+    }
+
+    .logo-wrap{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:8px;
+    }
+    .logo-card{
+      background:#fff;
+      border-radius:22px;
+      padding:22px 18px;
+      border:1px solid rgba(18,34,56,.08);
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+    .logo-image-wrap{
+      width:118px;
+      height:118px;
+      margin:0 auto 14px;
+      border-radius:50%;
+      background:#fff;
+      border:1px solid rgba(18,34,56,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .logo-image-wrap img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:10px;
+    }
+    .logo-name{
+      color:var(--navy);
+      font-size:18px;
+      font-weight:900;
+      line-height:1.4;
+    }
+
+    .quote-section{padding-top:16px}
+    .quote-card{
+      position:relative;
+      overflow:hidden;
+      padding:36px 32px;
+      background:
+        linear-gradient(135deg, rgba(29,141,149,.06), rgba(98,195,198,.10)),
+        #fff;
+      border-radius:30px;
+      border:1px solid rgba(29,141,149,.12);
+      box-shadow:var(--shadow);
+    }
+    .quote-card::before{
+      content:"「";
+      position:absolute;
+      left:24px;
+      top:8px;
+      font-size:88px;
+      color:rgba(29,141,149,.12);
+      font-weight:900;
+      line-height:1;
+    }
+    .quote-card::after{
+      content:"」";
+      position:absolute;
+      right:24px;
+      bottom:-8px;
+      font-size:88px;
+      color:rgba(29,141,149,.12);
+      font-weight:900;
+      line-height:1;
+    }
+    .quote-tag{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:38px;
+      padding:8px 16px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--teal-deep), var(--teal));
+      color:#fff;
+      border:none;
+      box-shadow:0 10px 22px rgba(29,141,149,.18);
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:16px;
+      line-height:1.2;
+    }
+    .quote-title{
+      font-size:36px;
+      line-height:1.25;
+      color:var(--navy-deep);
+      font-weight:900;
+      margin-bottom:14px;
+    }
+    .quote-source{
+      color:var(--gold);
+      font-size:18px;
+      font-weight:900;
+      margin-bottom:16px;
+    }
+    .spirit-block{
+      margin-top:18px;
+      padding:18px 20px;
+      border-radius:18px;
+      background:#fff;
+      border:1px solid rgba(18,34,56,.06);
+    }
+    .spirit-block p{
+      font-size:18px;
+      line-height:1.95;
+      color:var(--navy);
+    }
+    .spirit-block + .spirit-block{margin-top:14px}
+
+    .overview-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    .overview-card{
+      padding:26px;
+      display:flex;
+      flex-direction:column;
+      height:100%;
+    }
+    .overview-card h3{
+      font-size:24px;
+      font-weight:900;
+      color:var(--navy);
+      margin-bottom:12px;
+    }
+    .overview-card p{
+      font-size:16px;
+      color:var(--text);
+      line-height:1.85;
+    }
+    .mini-highlight{
+      margin-top:auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:64px;
+      width:100%;
+      padding:14px 18px;
+      background:linear-gradient(135deg, rgba(29,141,149,.14), rgba(98,195,198,.18));
+      border:1px solid rgba(29,141,149,.22);
+      color:var(--teal-dark);
+      border-radius:16px;
+      font-weight:900;
+      font-size:16px;
+      text-align:center;
+      line-height:1.5;
+      box-shadow:0 10px 22px rgba(29,141,149,.10);
+    }
+    .mini-highlight.emphasis{
+      min-height:64px;
+      font-size:16px;
+      background:linear-gradient(135deg, rgba(29,141,149,.18), rgba(98,195,198,.24));
+      border-color:rgba(29,141,149,.26);
+      box-shadow:0 12px 24px rgba(29,141,149,.12);
+    }
+
+    .stats-wrap{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:20px;
+      align-items:stretch;
+    }
+    .stats-card,.signup-card{padding:26px}
+    .stats-row{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .stat-box{
+      background:var(--soft);
+      border:1px solid rgba(29,141,149,.15);
+      border-radius:18px;
+      padding:18px 14px;
+      text-align:center;
+    }
+    .stat-label{
+      font-size:13px;
+      color:var(--muted);
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    .stat-value{
+      font-size:32px;
+      font-weight:900;
+      color:var(--navy);
+      line-height:1.08;
+    }
+    .stat-unit{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .countdown{
+      margin-top:16px;
+      padding:18px 16px;
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(29,141,149,.08), rgba(98,195,198,.12));
+      border:1px solid rgba(29,141,149,.16);
+    }
+    .countdown-title{
+      font-size:14px;
+      color:var(--teal-dark);
+      font-weight:800;
+      margin-bottom:8px;
+    }
+    .countdown-value{
+      font-size:26px;
+      font-weight:900;
+      color:var(--navy);
+      line-height:1.35;
+    }
+    .stats-note{
+      margin-top:12px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .signup-card h3{
+      font-size:26px;
+      color:var(--navy);
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .signup-card p{
+      color:var(--muted);
+      font-size:15px;
+      margin-bottom:18px;
+    }
+    .signup-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    .signup-option{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:20px;
+      border-radius:22px;
+      border:1px solid rgba(18,34,56,.08);
+      background:linear-gradient(180deg,#fff,#f8fcfc);
+      height:100%;
+    }
+    .signup-option h4{
+      font-size:20px;
+      color:var(--navy);
+      font-weight:900;
+      line-height:1.25;
+      min-height:50px;
+      display:flex;
+      align-items:flex-start;
+    }
+    .signup-option p{
+      margin:0;
+      font-size:14px;
+      color:var(--muted);
+      min-height:72px;
+    }
+    .signup-option .btn{
+      width:100%;
+      margin-top:auto;
+    }
+
+    .speaker-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+    .speaker-card{
+      background:#fff;
+      border:1px solid rgba(18,34,56,.08);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:132px 1fr;
+      gap:18px;
+      align-items:start;
+      transition:.2s ease;
+    }
+    .speaker-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 36px rgba(18,34,56,.12);
+    }
+    .speaker-photo-link{display:block}
+    .speaker-photo{
+      width:132px;
+      aspect-ratio:1 / 1.2;
+      border-radius:18px;
+      background:#f4fbfb;
+      border:1px solid rgba(18,34,56,.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      box-shadow:0 10px 24px rgba(18,34,56,.08);
+    }
+    .speaker-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center top;
+    }
+    .speaker-content .org{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(29,141,149,.08);
+      border:1px solid rgba(29,141,149,.14);
+      color:var(--teal-dark);
+      font-size:13px;
+      line-height:1.4;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .speaker-content .name{
+      color:var(--navy);
+      font-size:28px;
+      font-weight:900;
+      line-height:1.1;
+      margin-bottom:4px;
+    }
+    .speaker-content .title{
+      color:var(--teal-dark);
+      font-size:16px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .speaker-content .topic{
+      background:linear-gradient(135deg, rgba(29,141,149,.08), rgba(98,195,198,.12));
+      border-radius:14px;
+      padding:12px 14px;
+      color:var(--navy);
+      font-weight:800;
+      line-height:1.55;
+      margin-bottom:12px;
+    }
+    .speaker-actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn-mini{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:38px;
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:900;
+      background:linear-gradient(135deg, var(--teal-deep), var(--teal));
+      color:#fff;
+      border:none;
+      box-shadow:0 8px 18px rgba(29,141,149,.22);
+    }
+
+    .bio-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .bio-card{
+      padding:24px;
+      scroll-margin-top:100px;
+    }
+    .bio-card h3{
+      font-size:22px;
+      color:var(--navy);
+      font-weight:900;
+      margin-bottom:8px;
+    }
+    .bio-card p{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.85;
+    }
+    .bio-intro{
+      margin-bottom:18px;
+      color:var(--text);
+    }
+    .bio-section{
+      margin-top:14px;
+      padding:16px 18px;
+      border-radius:18px;
+      background:linear-gradient(180deg, #ffffff, #f8fcfc);
+      border:1px solid rgba(18,34,56,.07);
+    }
+    .bio-section h4{
+      font-size:16px;
+      color:var(--navy);
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .bio-list{
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+    .bio-list li{
+      position:relative;
+      padding-left:14px;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.75;
+    }
+    .bio-list li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:var(--teal-deep);
+      font-weight:900;
+    }
+
+    .schedule-wrap{display:grid;gap:12px}
+    .schedule-item{
+      display:grid;
+      grid-template-columns:150px 1.15fr .85fr;
+      background:#fff;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(18,34,56,.08);
+      box-shadow:var(--shadow);
+    }
+    .schedule-time{
+      background:linear-gradient(180deg, rgba(29,141,149,.10), rgba(98,195,198,.12));
+      padding:18px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:var(--teal-dark);
+      font-size:18px;
+      font-weight:900;
+      line-height:1.3;
+    }
+    .schedule-main{
+      padding:18px;
+      border-left:1px solid rgba(18,34,56,.06);
+    }
+    .schedule-main h4{
+      font-size:22px;
+      color:var(--navy);
+      font-weight:900;
+      line-height:1.28;
+      margin-bottom:6px;
+    }
+    .schedule-main p{
+      color:var(--muted);
+      font-size:15px;
+    }
+    .schedule-side{
+      padding:18px;
+      border-left:1px solid rgba(18,34,56,.06);
+      background:#fbfefe;
+    }
+    .schedule-side .label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .schedule-side .value{
+      color:var(--text);
+      font-size:15px;
+      line-height:1.65;
+      font-weight:700;
+    }
+
+    .org-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+    .org-card{padding:24px}
+    .org-card h3{
+      font-size:22px;
+      color:var(--navy);
+      font-weight:900;
+      margin-bottom:12px;
+    }
+    .org-card ul{
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+    .org-card li{
+      position:relative;
+      padding-left:14px;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.7;
+    }
+    .org-card li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:var(--teal-deep);
+      font-weight:900;
+    }
+
+    .sponsor-power-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-top:20px;
+    }
+    .sponsor-power-card{
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .sponsor-power-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -40px -40px auto;
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      background:rgba(98,195,198,.12);
+    }
+    .sponsor-badge{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      background:rgba(29,141,149,.10);
+      color:var(--teal-dark);
+      border:1px solid rgba(29,141,149,.16);
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+    .sponsor-price{
+      font-size:34px;
+      font-weight:900;
+      color:var(--navy-deep);
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+    .sponsor-power-card h3{
+      font-size:24px;
+      color:var(--navy);
+      font-weight:900;
+      margin-bottom:10px;
+      line-height:1.3;
+    }
+    .sponsor-power-card p{
+      color:var(--text);
+      font-size:15px;
+      line-height:1.8;
+      margin-bottom:14px;
+    }
+    .sponsor-tagline{
+      display:block;
+      color:var(--teal-dark);
+      font-weight:900;
+      margin-bottom:14px;
+    }
+    .sponsor-list{
+      list-style:none;
+      display:grid;
+      gap:8px;
+      margin-bottom:18px;
+    }
+    .sponsor-list li{
+      position:relative;
+      padding-left:14px;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.7;
+    }
+    .sponsor-list li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:var(--teal-deep);
+      font-weight:900;
+    }
+    .sponsor-cta{
+      width:100%;
+    }
+
+    .medical-value-grid{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:20px;
+      align-items:stretch;
+    }
+    .medical-value-card{
+      padding:26px;
+    }
+    .medical-value-card h3{
+      font-size:24px;
+      color:var(--navy);
+      font-weight:900;
+      margin-bottom:12px;
+    }
+    .medical-value-card p{
+      color:var(--text);
+      font-size:16px;
+      line-height:1.9;
+    }
+    .medical-value-points{
+      list-style:none;
+      display:grid;
+      gap:10px;
+      margin-top:16px;
+    }
+    .medical-value-points li{
+      position:relative;
+      padding-left:16px;
+      color:var(--text);
+      font-size:15px;
+      line-height:1.8;
+    }
+    .medical-value-points li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:var(--teal-deep);
+      font-weight:900;
+    }
+    .credit-box{
+      display:grid;
+      gap:14px;
+    }
+    .credit-item{
+      background:linear-gradient(180deg,#fff,#f8fcfc);
+      border:1px solid rgba(18,34,56,.08);
+      border-radius:18px;
+      padding:18px 18px 16px;
+    }
+    .credit-item .label{
+      font-size:13px;
+      color:var(--teal-dark);
+      font-weight:900;
+      margin-bottom:8px;
+      letter-spacing:.3px;
+    }
+    .credit-item .title{
+      font-size:20px;
+      color:var(--navy);
+      font-weight:900;
+      line-height:1.35;
+      margin-bottom:6px;
+    }
+    .credit-item p{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.8;
+    }
+
+    footer{
+      background:var(--navy-deep);
+      color:rgba(255,255,255,.76);
+      text-align:center;
+      padding:26px 16px;
+      font-size:14px;
+      margin-top:24px;
+    }
+
+    @media (max-width: 980px){
+      .logo-wrap,
+      .authority-strip,
+      .hero-panels,
+      .overview-grid,
+      .stats-wrap,
+      .speaker-grid,
+      .bio-grid,
+      .org-grid,
+      .sponsor-power-grid,
+      .medical-value-grid{
+        grid-template-columns:1fr;
+      }
+      .hero-meta{grid-template-columns:1fr}
+      .speaker-card{grid-template-columns:1fr}
+      .speaker-photo{
+        width:100%;
+        height:220px;
+      }
+      .schedule-item{grid-template-columns:1fr}
+      .schedule-main,.schedule-side{
+        border-left:none;
+        border-top:1px solid rgba(18,34,56,.06);
+      }
+      .hero-shell{padding:24px}
+      .hero-trustbar{grid-template-columns:1fr}
+      .hero-main-title{font-size:54px}
+      .hero-forum-title{font-size:30px}
+      .hero-forum-en{font-size:20px}
+      .section-title{font-size:30px}
+    }
+
+    @media (max-width: 680px){
+      body{font-size:16.5px; line-height:1.82}
+      section{padding:56px 0}
+      .container{width:min(100% - 24px, 1160px)}
+      .hero{padding:24px 0 40px}
+      .eyebrow{font-size:14px; padding:9px 14px}
+      .hero-main-title{font-size:42px}
+      .hero-main-en{font-size:20px}
+      .hero-forum-title{font-size:26px; line-height:1.28}
+      .hero-forum-en{font-size:17px; line-height:1.55}
+      .section-title{font-size:26px}
+      .section-subtitle{font-size:16px; line-height:1.82}
+      .hero-meta-item{font-size:16px; line-height:1.75}
+      .quote-title{font-size:30px}
+      .overview-card h3,
+      .signup-card h3,
+      .org-card h3,
+      .sponsor-power-card h3,
+      .bio-card h3{font-size:23px}
+      .overview-card p,
+      .bio-card p,
+      .org-card li,
+      .sponsor-power-card p,
+      .sponsor-list li,
+      .speaker-content .title,
+      .schedule-main p,
+      .schedule-side .value{font-size:16px; line-height:1.82}
+      .mini-highlight,
+      .speaker-content .org,
+      .quote-tag,
+      .sponsor-badge{font-size:14px}
+      .signup-option h4{font-size:20px}
+      .signup-option p{font-size:16px; min-height:auto}
+      .btn{width:100%; min-height:56px; font-size:16px}
+      .btn-mini{font-size:14px; min-height:42px}
+      .speaker-content .name{font-size:30px}
+      .speaker-content .topic{font-size:16px}
+      .bio-section h4{font-size:17px}
+      .bio-list li{font-size:16px; line-height:1.82}
+      .stat-label{font-size:14px}
+      .stat-value{font-size:34px}
+      .stat-unit,
+      .countdown-title,
+      .stats-note{font-size:14px}
+      .countdown-value{font-size:28px}
+      .schedule-time{font-size:16px}
+      .schedule-main h4{font-size:20px}
+      .spirit-block p{font-size:18px}
+      .stats-row,.signup-actions{grid-template-columns:1fr}
+      .cta-row{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-shell">
+          <div class="hero-topline" style="display:grid; grid-template-columns:1fr; gap:10px;">
+            <div class="hero-official-line">高雄榮民總醫院 × 全球健康發展協會 × 紐約北方醫學中心</div>
+            <div class="hero-forum-line">健康醫學論壇・失智防治 × 逆齡醫學 × 跨界整合</div>
+          </div>
+
+          <div class="hero-main-title">智匯健康｜腦力長青</div>
+          <div class="hero-main-en">SMART HEALTH &amp; BRAIN VITALITY</div>
+
+          <div class="hero-forum-title">2026 失智防治與逆齡醫學跨界論壇</div>
+          <div class="hero-forum-en">2026 INTERDISCIPLINARY FORUM ON DEMENTIA PREVENTION AND ANTI-AGING MEDICINE</div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item"><strong>時間</strong>2026 年 4 月 11 日（六）09:00–16:30</div>
+            <div class="hero-meta-item"><strong>地點</strong>高雄榮總急診大樓 6 樓第五會議室（高雄市左營區大中一路 386 號）</div>
+            <div class="hero-meta-item"><strong>活動聯繫人</strong>0937-492-923 林秘書</div>
+            <div class="hero-meta-item"><strong>報名費</strong>500 元　｜　<strong>參與內容</strong><span style="color:#c88716;font-weight:900;">含午餐券與學分</span></div>
+          </div>
+
+          <div class="hero-trustbar">
+            <div class="trust-chip"><span class="k">論壇定位</span><span class="v">聚焦失智防治、逆齡醫學與跨領域整合</span></div>
+            <div class="trust-chip"><span class="k">實體席次</span><span class="v">人數 200 位</span></div>
+            <div class="trust-chip"><span class="k">參與價值</span><span class="v">適合醫療、照護、健康產業與重視預防醫學的民眾</span></div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#signup">報名參與本論壇</a>
+            <a class="btn btn-secondary" href="#schedule">查閱完整議程</a>
+          </div>
+
+          <div class="hero-panels">
+            <div class="hero-panel">
+              <h3>論壇亮點</h3>
+              <ul>
+                <li>聚焦失智症診斷與治療、衰老與肌少症、身體認知機能低下症候群（PCDS）、營養抗衰與中醫結構觀點。</li>
+                <li>結合臨床醫學、高齡醫學、營養、生技產業與傳統醫學研究，形成完整的跨界整合論壇。</li>
+                <li><strong>含午餐券與學分</strong>，對醫療、照護、健康領域及重視預防醫學的與會者都很重要。</li>
+              </ul>
+            </div>
+
+            <div class="hero-panel dark">
+              <h3>核心精神</h3>
+              <ul>
+                <li>「上工治未病」不是口號，而是提前理解健康、提前調整生活與結構的智慧。</li>
+                <li>越早知道、越早培養好習慣，就越有機會為自己與家人爭取預防與修復的空間。</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">主辦與合作單位</h2>
+      <p class="section-subtitle">本論壇由三個核心單位共同推動，形成臨床醫療、健康推廣與國際醫學合作的跨界整合。</p>
+      <div class="authority-strip">
+        <div class="authority-item">
+          <div class="logo-image-wrap">
+            <img src="logo-kvgh-geriatric.png" alt="高雄榮民總醫院 Logo">
+          </div>
+          <div class="logo-name">高雄榮民總醫院</div>
+        </div>
+
+        <div class="authority-item">
+          <div class="logo-image-wrap">
+            <img src="logo-global-health.png" alt="全球健康發展協會 Logo">
+          </div>
+          <div class="logo-name">全球健康發展協會</div>
+        </div>
+
+        <div class="authority-item">
+          <div class="logo-image-wrap">
+            <img src="logo-northern-medical.png" alt="紐約北方醫學中心 Logo">
+          </div>
+          <div class="logo-name">紐約北方醫學中心</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-card">
+        <div class="quote-tag">論壇主題精神</div>
+        <div class="quote-title">上工治未病，中工治已病</div>
+        <div class="quote-source">——《黃帝內經》</div>
+
+        <div class="spirit-block">
+          <p>面對失智年輕化的海嘯趨勢，需要「早知道」培養好習慣，即可爭取預防與修復的空間。</p>
+        </div>
+        <div class="spirit-block">
+          <p>高雄榮總高齡醫學中心與全球健康發展協會攜手策劃的失智防治講座，正是以科學驗證成果將古今的智慧，呈現給臺灣社會。</p>
+        </div>
+        <div class="spirit-block">
+          <p>本協會與紐約北方醫學教育基金會密切合作，推廣與實踐四維醫學，並籌建北方醫學與健康學院，齊為開創大眾事業成功與身心健康兩全其美的境界而奉獻心力。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">活動資訊與參與重點</h2>
+      <p class="section-subtitle">快速掌握本論壇的重要資訊與參與重點。</p>
+
+      <div class="overview-grid">
+        <div class="card overview-card">
+          <h3>活動資訊</h3>
+          <p>
+            <strong>時間：</strong>2026 年 4 月 11 日（六）09:00–16:30<br>
+            <strong>地點：</strong>高雄榮總急診大樓 6 樓第五會議室（高雄市左營區大中一路 386 號）<br>
+            <strong>活動聯繫人：</strong>0937-492-923 林秘書<br>
+            <strong>報名費：</strong>500 元
+          </p>
+          <div class="mini-highlight">⭐ 含午餐券與學分</div>
+        </div>
+
+        <div class="card overview-card">
+          <h3>這場論壇適合誰參加？</h3>
+          <p>適合關心失智預防、逆齡醫學、高齡照護、營養、臨床醫學、生技健康產業，以及重視家庭健康管理與預防醫學的朋友參加。</p>
+          <div class="mini-highlight emphasis">重點提醒：學分對與會者非常重要</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">學分與醫療價值重點</h2>
+      <p class="section-subtitle">這不只是一場健康講座，而是一場聚焦失智防治、逆齡醫學與跨專業整合的醫學論壇，兼具臨床實務、預防觀點與交流價值。</p>
+
+      <div class="medical-value-grid">
+        <div class="card medical-value-card">
+          <h3>為什麼值得親自參與？</h3>
+          <p>
+            本論壇由醫學中心與專業機構共同推動，議題橫跨失智症診斷與治療、衰老與肌少症、
+            身體認知機能低下症候群（PCDS）、營養抗衰、生技產業觀點，以及傳統醫學與結構觀點。
+            對臨床醫療、高齡照護、健康管理與預防醫學相關領域而言，這是一場具有整合視野與實務啟發價值的交流機會。
+          </p>
+          <ul class="medical-value-points">
+            <li>一次掌握失智防治與逆齡醫學的跨領域脈絡</li>
+            <li>兼顧臨床觀點、健康管理與預防醫學應用</li>
+            <li>有助醫療、照護與健康產業工作者拓展整合視野</li>
+            <li>適合醫師、醫療專業人員及重視家庭健康管理之民眾參與</li>
+          </ul>
+        </div>
+
+        <div class="credit-box">
+          <div class="card credit-item">
+            <div class="label">CME / FORUM VALUE</div>
+            <div class="title">實體參與可取得午餐券與學分</div>
+            <p>對重視專業進修與正式參與品質的與會者而言，這不只是聽講，更是一次兼具學習與交流效益的完整論壇體驗。</p>
+          </div>
+
+          <div class="card credit-item">
+            <div class="label">INTERDISCIPLINARY INSIGHT</div>
+            <div class="title">從醫學、營養、生技到傳統醫學的整合交流</div>
+            <p>不同專業視角同場對話，有助於理解失智防治的全貌，也讓與會者更容易看見未來臨床與健康管理的合作可能。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup">
+    <div class="container">
+      <div class="stats-wrap">
+        <div class="card stats-card">
+          <h2 class="section-title" style="font-size:30px; margin-bottom:8px;">報名資訊一覽</h2>
+          <p class="section-subtitle" style="margin-bottom:0;">場地資訊已更新，本論壇參與人數為 200 位；已報名與剩餘席次可再依最新數字持續更新。</p>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <div class="stat-label">人數</div>
+              <div class="stat-value" id="maxSeats">200</div>
+              <div class="stat-unit">位</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">已報名</div>
+              <div class="stat-value" id="registeredCount">20</div>
+              <div class="stat-unit">位</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-label">剩餘名額</div>
+              <div class="stat-value" id="remainingCount">180</div>
+              <div class="stat-unit">位</div>
+            </div>
+          </div>
+
+          <div class="countdown">
+            <div class="countdown-title">距離活動開始還有</div>
+            <div class="countdown-value" id="countdown">計算中…</div>
+          </div>
+
+          <div class="stats-note">備註：總人數已依最新場地資訊更新為 200 位；已報名與剩餘席次可依實際報名狀況調整。</div>
+        </div>
+
+        <div class="card signup-card">
+          <h3>報名參與</h3>
+          <p>請依需求選擇線上或實體參與方式；實體席次採限額安排，完成報名後即可保留資格。</p>
+
+          <div class="signup-actions">
+            <div class="signup-option">
+              <h4>線上參與</h4>
+              <p>適合無法親臨現場之醫療專業人員與關心預防醫學之參與者。</p>
+              <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScmoIYCc2R4t0bI9tti1THtAMSB700oE40Rs7UIAEs8cKItPg/viewform" target="_blank" rel="noopener noreferrer">線上參與報名</a>
+            </div>
+
+            <div class="signup-option">
+              <h4>實體參與（含午餐與學分）</h4>
+              <p>適合希望進行現場交流與深度學習之與會者，並可取得午餐券與學分。</p>
+              <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfg1NWZY5FJ_hq717yzEtcBjGLsL-Dir33LLX9pq50wQzc2mQ/viewform" target="_blank" rel="noopener noreferrer">申請實體出席名額</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">演講者陣容</h2>
+      <p class="section-subtitle">依論壇出場順序整理，點擊頭像即可跳到下方演講者詳細介紹。</p>
+
+      <div class="speaker-grid">
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-lin"><div class="speaker-photo"><img src="speaker-lin.png" alt="林育德 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">高雄榮民總醫院</div>
+            <div class="name">林育德</div>
+            <div class="title">高雄榮民總醫院 副院長｜教育部部定教授</div>
+            <div class="topic">主題：失智症的診斷與治療</div>
+            <div class="speaker-actions"><a href="#bio-lin" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-chou"><div class="speaker-photo"><img src="speaker-chou.png" alt="周明岳 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">高雄榮民總醫院</div>
+            <div class="name">周明岳</div>
+            <div class="title">高齡醫學中心主任｜國立陽明大學部定兼任助理教授</div>
+            <div class="topic">主題：衰老與肌少症</div>
+            <div class="speaker-actions"><a href="#bio-chou" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-liang"><div class="speaker-photo"><img src="speaker-liang.png" alt="梁志光 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">高雄榮民總醫院</div>
+            <div class="name">梁志光</div>
+            <div class="title">高齡醫學中心主治醫師｜教育部部定副教授</div>
+            <div class="topic">主題：身體認知機能低下症候群（PCDS）</div>
+            <div class="speaker-actions"><a href="#bio-liang" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-wu"><div class="speaker-photo"><img src="speaker-wu.png" alt="吳啟裕 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">國際醫學科學基金會</div>
+            <div class="name">吳啟裕 博士</div>
+            <div class="title">生化與細胞研究專家｜大健康學院副院長</div>
+            <div class="topic">主題：生技產業挑戰失智的努力</div>
+            <div class="speaker-actions"><a href="#bio-wu" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-shih"><div class="speaker-photo"><img src="speaker-shih.png" alt="石娉雯 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">高雄榮民總醫院</div>
+            <div class="name">石娉雯</div>
+            <div class="title">營養室主任｜教育部部定講師</div>
+            <div class="topic">主題：失智抗衰的營養學</div>
+            <div class="speaker-actions"><a href="#bio-shih" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-chiu"><div class="speaker-photo"><img src="speaker-chiu.png" alt="邱鎮添 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">高雄榮民總醫院</div>
+            <div class="name">邱鎮添</div>
+            <div class="title">傳統醫學科主治醫師｜義守大學兼任講師</div>
+            <div class="topic">主題：傳統的衰老研究</div>
+            <div class="speaker-actions"><a href="#bio-chiu" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-lan"><div class="speaker-photo"><img src="speaker-lan.png" alt="藍士哲 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">紐約北方醫學中心顧問醫師</div>
+            <div class="name">藍士哲</div>
+            <div class="title">中西醫整合醫師｜中華民國中醫兒科專科醫師</div>
+            <div class="topic">主題：結構觀點預防失智症</div>
+            <div class="speaker-actions"><a href="#bio-lan" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">演講者詳細介紹</h2>
+      <p class="section-subtitle">資料來源為公開網站查詢，演講者學經歷豐富，族繁不及備載。</p>
+
+      <div class="bio-grid">
+        <div class="card bio-card" id="bio-lin">
+          <h3>林育德｜學經歷</h3>
+          <p class="bio-intro">現任高雄榮民總醫院副院長，並為教育部部定教授，兼任國立國防醫學院臨床教授、國立中山大學醫學院教授。長期深耕神經內科、高齡醫學與長照整合領域，兼具臨床、管理、教學與公共事務經驗。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>高雄榮民總醫院 副院長</li><li>教育部 部定教授</li><li>國立國防醫學院 兼任臨床教授</li><li>國立中山大學醫學院 兼任教授</li><li>高雄市醫師公會 監事</li><li>台灣高齡照護暨教育協會 監事</li><li>高雄市政府衛生局醫療區域輔導與資源整合計畫 專家諮詢委員</li><li>高雄市政府衛生局醫事審議委員會 委員</li><li>屏東縣長期照顧服務推動委員會 委員</li><li>中華民國醫師公會全國聯合會長照小組 委員</li><li>社團法人高雄市失智症協會 理事</li><li>財團法人鄭德齡基金會 監察人</li><li>財團法人惠民基金會 董事</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>高雄榮民總醫院 醫務企管部 副主任</li><li>高雄榮民總醫院 高齡醫學中心 主任</li><li>高雄榮民總醫院 神經內科 主任</li><li>高雄榮總高齡醫學中心 教授級主治醫師</li><li>高雄榮民總醫院 神經內科 主治醫師</li><li>台灣神經醫學會 理事、監事</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>國立中山大學 生物醫學博士</li><li>國立陽明大學 醫學系</li><li>美國南加州大學 Keck 醫學院附設醫院 進修</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-chou">
+          <h3>周明岳｜學經歷</h3>
+          <p class="bio-intro">現任高齡醫學中心主任，並為國立陽明大學部定兼任助理教授、國防醫學院內科臨床講師，同時擔任台灣整合照護學會常務理事、台灣高齡照護暨教育協會常務理事。長期投入高齡醫學、家庭醫學、安寧緩和醫學與社區醫學領域，兼具臨床照護、學術研究與整合照護實務經驗。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>高齡醫學中心主任</li><li>國立陽明大學部定兼任助理教授</li><li>國防醫學院內科臨床講師</li><li>台灣整合照護學會常務理事</li><li>台灣高齡照護暨教育協會常務理事</li>
+          </ul></div>
+          <div class="bio-section"><h4>主治專長</h4><ul class="bio-list">
+            <li>老年醫學</li><li>家庭醫學</li><li>安寧緩和醫學</li><li>社區醫學</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>國立陽明大學公共衛生研究所博士</li><li>國立陽明大學醫學系畢業</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>日本名古屋國家長壽研究中心研究員</li><li>日本 Tokyo University Hospital 老人醫學科研究員</li><li>芬蘭 Helsinki University 老人醫學科研究員</li><li>美國 St. Louis University 老人醫學科研究員</li><li>加拿大 McGill University 老人醫學科研究員</li><li>英國 Bournemouth Hospital 臨床老人醫學科訪問學者</li><li>台北榮民總醫院高齡醫學中心資深研究員</li><li>高雄榮民總醫院家庭醫學部住院總醫師</li><li>高雄榮民總醫院家庭醫學部住院醫師</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-liang">
+          <h3>梁志光 LIANG Chih-Kuang｜學經歷</h3>
+          <p class="bio-intro">現任高雄榮民總醫院高齡醫學中心主治醫師，並兼任內科部神經內科主治醫師，為教育部部定副教授，同時擔任國立陽明大學醫學系高齡醫學科兼任副教授。長期深耕神經內科與高齡醫學領域，專注於失智症照護與高齡整合醫療，兼具臨床、研究與教學經驗。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>高雄榮總高齡醫學中心主治醫師</li><li>高雄榮總內科部神經內科兼任主治醫師</li><li>教育部部定副教授</li><li>國立陽明大學醫學系高齡醫學科兼任副教授</li>
+          </ul></div>
+          <div class="bio-section"><h4>主治專長</h4><ul class="bio-list">
+            <li>一般神經內科</li><li>老年失智症</li><li>老年醫學內科</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>國立陽明大學環境與職業衛生研究所博士</li><li>國立陽明大學醫學士</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>嘉義榮民醫院內科住院醫師</li><li>高雄榮總內科住院醫師</li><li>高雄榮總神經內科住院醫師／總醫師</li><li>台北榮總高齡醫學科臨床研究員</li><li>高雄榮總內科部一般內科主治醫師</li>
+          </ul></div>
+          <div class="bio-section"><h4>榮譽</h4><ul class="bio-list">
+            <li>2008 台灣老年醫學雜誌最佳投稿原著論文第三名</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-wu">
+          <h3>吳啟裕 博士｜學經歷</h3>
+          <p class="bio-intro">現任博太生技醫藥股份有限公司植物新藥總經理，並擔任中華自然醫學教育學會理事長，長期投入生化醫學與抗癌研究領域，專注於癌細胞機制與預防醫學應用，兼具產業實務與學術研究背景。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>博太生技醫藥股份有限公司 植物新藥總經理</li><li>中華自然醫學教育學會 理事長</li><li>國際醫學科學基金會 大健康學院 副院長</li><li>中華自然療法世界總會 學術發展委員會 主任委員</li>
+          </ul></div>
+          <div class="bio-section"><h4>專長</h4><ul class="bio-list">
+            <li>抗癌與防癌相關藥物與食品研發</li><li>食品衛生安全檢測</li><li>預防保健醫學</li><li>自癒力生化學</li><li>健康美麗長壽養生學</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>陽明大學 生物化學研究所 博士</li><li>台灣大學生化科學研究所 碩士</li><li>台灣大學 化學系 學士</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>中央研究院生物化學研究所 博士後研究員</li><li>台灣基因體醫學國家型計劃蛋白質體研究中心 執行長</li><li>世界人體血液蛋白質體國際研究團隊 台灣專家代表</li><li>研究毒殺癌細胞及抑制癌細胞轉移機制與抗癌藥物研發</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-shih">
+          <h3>石娉雯｜學經歷</h3>
+          <p class="bio-intro">現任高雄榮民總醫院營養室主任，並具教育部部定講師資格，長期致力於臨床營養治療與營養管理，帶領團隊提供整合性營養照護服務，涵蓋門診、住院與社區健康推廣。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>高雄榮民總醫院 營養室主任</li><li>教育部 部定講師</li>
+          </ul></div>
+          <div class="bio-section"><h4>專長</h4><ul class="bio-list">
+            <li>臨床營養治療</li><li>營養師團隊管理</li><li>團體營養教育</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>嘉南藥理科技大學 營養與保健科技研究所 碩士</li><li>靜宜大學 食品營養學系 學士</li>
+          </ul></div>
+          <div class="bio-section"><h4>服務與實務</h4><ul class="bio-list">
+            <li>高雄榮總員工消費合作社相關服務</li><li>門診營養諮詢</li><li>病房營養治療</li><li>社區營養教育</li><li>居家營養服務</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-chiu">
+          <h3>邱鎮添｜學經歷</h3>
+          <p class="bio-intro">現任高雄榮民總醫院傳統醫學科主治醫師，並為義守大學學士後中醫學系兼任講師，長期投入中西醫整合醫療，專注於癌症輔助療法與慢性疾病調理，兼具臨床與教學經驗。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>高雄榮民總醫院傳統醫學科主治醫師</li><li>義守大學學士後中醫學系兼任講師</li><li>高雄市中醫師公會第十四、十五屆常務理事</li><li>中華民國中醫內科醫學會第六至第九屆理事</li>
+          </ul></div>
+          <div class="bio-section"><h4>主治專長</h4><ul class="bio-list">
+            <li>癌症中西醫互補療法（肺癌、乳癌、消化道癌症、婦癌、攝護腺癌）</li><li>中醫內科</li><li>消化系統、肝膽腸胃疾病（慢性肝炎、肝硬化、消化性潰瘍）</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>中國醫藥學大學中醫學系</li><li>國立中山大學醫務管理碩士</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>高雄榮總傳統醫學科前主任（2017/03/07–2024/06/30）</li><li>中醫：劉景昇中醫診所、進祥中醫診所、活水中醫診所、宏信中醫診所</li><li>西醫：台南新樓醫院麻豆分院小兒科、嘉義聖馬爾定醫院家醫科、台中沙鹿光田醫院內科、台中市立老人醫院老年科</li>
+          </ul></div>
+          <div class="bio-section"><h4>榮譽</h4><ul class="bio-list">
+            <li>2022–2025 國醫節國際中醫藥學術論壇 壁報論文競賽華陀金獎</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-lan">
+          <h3>藍士哲｜學經歷</h3>
+          <p class="bio-intro">現任中醫院院長，畢業於長庚大學中醫學系，具備中西醫雙重醫師資格，專注於中西醫整合治療，涵蓋腸胃內科、兒童成長、針灸醫學與功能性醫療領域。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>中醫院院長</li><li>中西醫整合醫師</li>
+          </ul></div>
+          <div class="bio-section"><h4>專長領域</h4><ul class="bio-list">
+            <li>腸胃內科</li><li>兒童成長調理</li><li>眼針與神采美顏針</li><li>結構治療</li>
+          </ul></div>
+          <div class="bio-section"><h4>學經歷</h4><ul class="bio-list">
+            <li>長庚大學中醫系 中西醫師</li><li>台北市立聯合醫院林森中醫院區 中醫師</li><li>百合馬光中醫診所 資深主治醫師</li><li>中華民國中醫兒科專科醫師</li><li>顏面針灸醫學會認證專科醫師</li>
+          </ul></div>
+          <div class="bio-section"><h4>特色治療</h4><ul class="bio-list">
+            <li>眼針</li><li>神采美顏針</li><li>結構治療</li><li>個人頻道：Dr.藍寶爸－藍士哲中醫師</li>
+          </ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <div class="container">
+      <h2 class="section-title">完整論壇議程</h2>
+      <p class="section-subtitle">以下整合論壇主要流程，讓與會者在報名前就能清楚理解全天內容安排。</p>
+
+      <div class="schedule-wrap">
+        <div class="schedule-item"><div class="schedule-time">08:30–09:00</div><div class="schedule-main"><h4>報到</h4><p>來賓入場與報到</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">論壇正式開始前，完成報到與入席。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">09:00–09:30</div><div class="schedule-main"><h4>致詞</h4><p>論壇開場與貴賓致詞</p></div><div class="schedule-side"><div class="label">致詞貴賓</div><div class="value">陳金順 院長（高雄榮民總醫院）<br>張宏泰 理事長（全球健康發展協會）<br>陳彥玲 博士（紐約北方醫學中心 國際合作處處長）</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">09:30–10:00</div><div class="schedule-main"><h4>失智症的診斷與治療</h4><p>從醫學角度理解失智症的現況與治療路徑。</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">林育德 副院長</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">10:00–10:30</div><div class="schedule-main"><h4>衰老與肌少症</h4><p>從高齡醫學中心視角，看衰老機制與肌少症的關聯。</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">周明岳 主任</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">10:30–10:50</div><div class="schedule-main"><h4>休息時間</h4><p>Coffee Break</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">中場休息與交流。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">10:50–11:20</div><div class="schedule-main"><h4>身體認知機能低下症候群（PCDS）</h4><p>探索身體與認知功能之間的連動與風險訊號。</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">梁志光</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">11:20–11:50</div><div class="schedule-main"><h4>失智抗衰的營養學</h4><p>從營養學角度看失智預防與抗衰老的日常實踐。</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">石娉雯 主任</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">12:00–13:20</div><div class="schedule-main"><h4>午餐</h4><p>午餐交流時間</p></div><div class="schedule-side"><div class="label">提醒</div><div class="value">本活動含午餐券與學分。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">13:20–13:50</div><div class="schedule-main"><h4>生技產業挑戰失智的努力</h4><p>從生技與產業端看失智相關發展與挑戰。</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">吳啟裕 博士</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">13:50–14:20</div><div class="schedule-main"><h4>產品分享（一）</h4><p>參展廠商分享</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">可後續補上單位名稱與分享內容。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">14:20–14:40</div><div class="schedule-main"><h4>休息時間</h4><p>Coffee Break</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">下午場開始前稍作休息。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">14:40–15:10</div><div class="schedule-main"><h4>傳統的衰老研究</h4><p>從傳統醫學視角看衰老研究與健康維持。</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">邱鎮添 醫師</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">15:10–15:40</div><div class="schedule-main"><h4>結構觀點預防失智症</h4><p>從中醫與結構角度切入預防醫學與健康管理。</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">藍士哲 醫師</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">15:40–16:10</div><div class="schedule-main"><h4>產品分享（二）</h4><p>參展廠商分享</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">可後續補上單位與簡介。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">16:10–16:30</div><div class="schedule-main"><h4>結語</h4><p>論壇總結與閉幕</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">Closing Remarks</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">主辦與協辦單位</h2>
+      <p class="section-subtitle">以下依照你提供與 EDM 資訊完整整理呈現。</p>
+
+      <div class="org-grid">
+        <div class="card org-card">
+          <h3>主辦單位</h3>
+          <ul>
+            <li>高雄榮民總醫院</li>
+            <li>全球健康發展協會</li>
+            <li>紐約北方醫學中心</li>
+          </ul>
+        </div>
+
+        <div class="card org-card">
+          <h3>協辦單位</h3>
+          <ul>
+            <li>高雄榮總高齡醫學中心</li>
+            <li>紐約飛天大學北方分校</li>
+            <li>北方醫學與健康科學基金會</li>
+            <li>國際扶輪 3510 地區</li>
+            <li>紐約橙縣臺灣同鄉會</li>
+            <li>Hudson Valley Asian American Chamber of Commerce</li>
+            <li>Crystal Windows &amp; Doors USA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">贊助廠商權利義務</h2>
+      <p class="section-subtitle">這不只是設攤，而是讓廠商在精準族群面前建立信任、說清解方、接觸高品質潛在客戶，真正把曝光變成合作機會。</p>
+
+      <div class="sponsor-power-grid">
+        <div class="card sponsor-power-card">
+          <span class="sponsor-badge">高曝光主推方案</span>
+          <div class="sponsor-price">NT$20,000</div>
+          <h3>設攤 ＋ 五分鐘解方提案短講</h3>
+          <p>適合有產品、有解方、有理念的品牌。除了現場接觸與會者，更能透過短講快速建立專業形象，讓潛在客戶在短時間內理解你能解決什麼問題。</p>
+          <span class="sponsor-tagline">適合：希望同時拿到曝光、互動、信任與後續成交機會的廠商</span>
+          <ul class="sponsor-list">
+            <li>現場設攤展示，提升品牌可見度</li>
+            <li>五分鐘上台短講，直接說明你的解方</li>
+            <li>更容易建立專業定位與成交前信任</li>
+            <li>合約與詳細說明皆已整理在連結內</li>
+          </ul>
+          <a href="https://ctfis.pse.is/20K" target="_blank" rel="noopener noreferrer" class="btn btn-primary sponsor-cta">查閱合作方案與權益說明</a>
+        </div>
+
+        <div class="card sponsor-power-card">
+          <span class="sponsor-badge">彈性入門方案</span>
+          <div class="sponsor-price">NT$15,000</div>
+          <h3>二選一：僅設攤 或 僅五分鐘解方提案短講</h3>
+          <p>適合想先測試市場、聚焦單一曝光方式的品牌。若你的產品適合現場體驗，可選設攤；若你是顧問型、服務型廠商，可選上台短講，直接切入價值主張。</p>
+          <span class="sponsor-tagline">適合：產品體驗型、顧問型、服務型，或首次合作想先切入市場的廠商</span>
+          <ul class="sponsor-list">
+            <li>A 方案：僅設攤，強化實體體驗與互動</li>
+            <li>B 方案：僅短講，快速建立專業印象</li>
+            <li>可依品牌屬性選擇最適合的曝光方式</li>
+            <li>合約與完整權利義務皆在連結內</li>
+          </ul>
+          <a href="https://ctfis.pse.is/0411-15K" target="_blank" rel="noopener noreferrer" class="btn btn-primary sponsor-cta">了解合作方式與申請流程</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    智匯健康｜腦力長青・2026 失智防治與逆齡醫學跨界論壇
+  </footer>
+
+  <script>
+    function updateCountdown(){
+      const target = new Date("2026-04-11T09:00:00").getTime();
+      const now = new Date().getTime();
+      const diff = target - now;
+      const el = document.getElementById("countdown");
+      if(!el) return;
+      if(diff <= 0){
+        el.textContent = "活動已開始";
+        return;
+      }
+      const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const m = Math.floor((diff / (1000 * 60)) % 60);
+      el.textContent = d + " 天 " + h + " 小時 " + m + " 分";
+    }
+
+    function updateRegistrationStats(){
+      const maxSeats = 200;
+      const baseRegistered = 20;
+      const startTime = new Date("2026-03-26T12:00:00").getTime();
+      const incrementInterval = 2 * 60 * 60 * 1000; // 每 2 小時 +1
+      const now = new Date().getTime();
+
+      let registered = baseRegistered;
+      if(now > startTime){
+        const increments = Math.floor((now - startTime) / incrementInterval);
+        registered = Math.min(maxSeats, baseRegistered + increments);
+      }
+
+      const remaining = Math.max(0, maxSeats - registered);
+
+      const maxSeatsEl = document.getElementById("maxSeats");
+      const registeredEl = document.getElementById("registeredCount");
+      const remainingEl = document.getElementById("remainingCount");
+
+      if(maxSeatsEl) maxSeatsEl.textContent = maxSeats;
+      if(registeredEl) registeredEl.textContent = registered;
+      if(remainingEl) remainingEl.textContent = remaining;
+    }
+
+    updateCountdown();
+    updateRegistrationStats();
+    setInterval(updateCountdown, 60000);
+    setInterval(updateRegistrationStats, 60000);
+  </script>
+</body>
+</html>
