@@ -315,10 +315,14 @@
       box-shadow:0 12px 26px rgba(29,141,149,.22);
     }
     .btn-secondary{
-      background:linear-gradient(135deg, var(--teal-deep), var(--teal));
+      background:transparent;
+      color:var(--teal-dark);
+      border:2px solid var(--teal-deep);
+      box-shadow:none;
+    }
+    .btn-secondary:hover{
+      background:var(--teal-deep);
       color:#fff;
-      box-shadow:0 12px 26px rgba(29,141,149,.22);
-      border:none;
     }
 
     .hero-panels{
@@ -1121,9 +1125,791 @@
       .stats-row,.signup-actions{grid-template-columns:1fr}
       .cta-row{flex-direction:column}
     }
+    /* ── 成長足跡卡片 ── */
+    .footprint-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+      gap:24px;
+      margin-top:28px;
+    }
+    .footprint-card{
+      background:var(--white);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(18,34,56,.06);
+      overflow:hidden;
+    }
+    .footprint-header{
+      background:linear-gradient(135deg,var(--navy-deep),var(--teal-dark));
+      padding:24px 28px;
+      color:#fff;
+    }
+    .footprint-header .fp-badge{
+      display:inline-block;
+      background:rgba(255,255,255,.18);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:999px;
+      padding:3px 14px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+    .footprint-header h3{
+      font-size:22px;
+      font-weight:900;
+      margin-bottom:4px;
+    }
+    .footprint-header .fp-sub{
+      font-size:14px;
+      opacity:.75;
+    }
+    .footprint-body{
+      padding:24px 28px;
+    }
+    .footprint-body h4{
+      font-size:14px;
+      font-weight:800;
+      color:var(--teal-dark);
+      margin-bottom:10px;
+      letter-spacing:.5px;
+    }
+    .news-list{
+      list-style:none;
+      padding:0;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .news-list li a{
+      display:block;
+      padding:10px 16px;
+      border-radius:12px;
+      background:var(--soft);
+      border:1px solid var(--line);
+      font-size:14px;
+      font-weight:600;
+      color:var(--navy-deep);
+      text-decoration:none;
+      transition:all .2s;
+      line-height:1.6;
+    }
+    .news-list li a:hover{
+      background:var(--teal);
+      color:#fff;
+      border-color:var(--teal);
+    }
+    .news-list li a .media-tag{
+      display:inline-block;
+      font-size:11px;
+      font-weight:700;
+      color:var(--teal-dark);
+      background:rgba(29,141,149,.12);
+      border-radius:6px;
+      padding:1px 8px;
+      margin-right:6px;
+    }
+    .news-list li a:hover .media-tag{
+      color:#fff;
+      background:rgba(255,255,255,.25);
+    }
+    .fp-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    /* ── 快速跳轉列 ── */
+    .quick-nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
+    }
+    .qnav-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      padding:7px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      background:rgba(29,141,149,.12);
+      color:var(--teal-dark);
+      border:1.5px solid rgba(29,141,149,.22);
+      text-decoration:none;
+      transition:all .2s;
+      white-space:nowrap;
+    }
+    .qnav-btn:hover{
+      background:var(--teal-deep);
+      color:#fff;
+      border-color:var(--teal-deep);
+    }
+    /* ── 回到頂部按鈕 ── */
+    #back-to-top{
+      position:fixed;
+      bottom:28px;
+      right:24px;
+      z-index:1000;
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      background:var(--teal-deep);
+      color:#fff;
+      border:none;
+      cursor:pointer;
+      font-size:22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 4px 16px rgba(18,34,56,.25);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .25s, transform .25s;
+      transform:translateY(10px);
+    }
+    #back-to-top.visible{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+    #back-to-top:hover{
+      background:var(--teal);
+    }
+    /* ── 場次切換列 ── */
+    .session-nav{
+      position:sticky;
+      top:0;
+      z-index:999;
+      background:var(--navy-deep);
+      padding:10px 0;
+      border-bottom:3px solid var(--teal-deep);
+      box-shadow:0 4px 16px rgba(18,34,56,.25);
+    }
+    .session-nav .container{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .session-nav-label{
+      font-size:12px;
+      font-weight:700;
+      color:rgba(255,255,255,.55);
+      letter-spacing:.6px;
+      margin-right:4px;
+      white-space:nowrap;
+    }
+    .session-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      padding:7px 18px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.2px;
+      cursor:pointer;
+      border:1.5px solid transparent;
+      transition:all .22s;
+      text-decoration:none;
+    }
+    .session-btn.active,
+    .session-btn:hover{
+      background:var(--teal);
+      color:var(--navy-deep);
+      border-color:var(--teal);
+    }
+    .session-btn:not(.active){
+      background:rgba(255,255,255,.08);
+      color:rgba(255,255,255,.85);
+      border-color:rgba(255,255,255,.15);
+    }
+    .session-btn .session-date{
+      font-size:11px;
+      opacity:.8;
+    }
+    /* ── 場次分隔線 ── */
+    .session-divider{
+      background:linear-gradient(135deg, var(--navy-deep) 0%, var(--teal-dark) 100%);
+      padding:52px 0;
+      text-align:center;
+      border-top:6px solid var(--teal);
+    }
+    .session-divider-inner{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+    .session-divider-badge{
+      display:inline-block;
+      background:rgba(255,255,255,.15);
+      color:rgba(255,255,255,.9);
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:999px;
+      padding:5px 18px;
+      font-size:13px;
+      font-weight:800;
+      letter-spacing:.5px;
+    }
+    .session-divider-title{
+      font-size:34px;
+      font-weight:900;
+      color:#ffffff;
+      letter-spacing:.5px;
+    }
+    .session-divider-sub{
+      font-size:15px;
+      color:rgba(255,255,255,.72);
+    }
   </style>
 </head>
-<body>
+<body><!-- ══ 6 月 26 日場次 ══ -->
+  <div id="top"></div>
+  <div class="session-divider" id="session-626">
+    <div class="container">
+      <div class="session-divider-inner">
+        <span class="session-divider-badge">第三場次</span>
+        <div class="session-divider-title">智匯健康｜腦力長青</div>
+        <div class="session-divider-sub">2026 失智防治與逆齡醫學跨界論壇・嘉義場</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🆕 第三場次快速導覽列(教練 2026-06-17 親定位置:副標題下方空格) -->
+  <style>
+    .session-quicknav{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg,#0e2638 0%,#102a3f 100%);padding:14px 0 16px;border-bottom:1px solid rgba(255,255,255,.12);box-shadow:0 2px 12px rgba(0,0,0,.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .session-quicknav .qn-inner{max-width:1200px;margin:0 auto;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;padding:0 16px}
+    .session-quicknav a{color:#fff;text-decoration:none;padding:9px 18px;border-radius:8px;font-size:15px;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);transition:all .2s;white-space:nowrap}
+    .session-quicknav a:hover{background:#c9a86a;color:#122238;border-color:#c9a86a;transform:translateY(-1px)}
+    .session-quicknav a.primary{background:#c9a86a;color:#122238;border-color:#c9a86a}
+    .session-quicknav a.primary:hover{background:#fff;color:#122238;border-color:#fff}
+    @media (max-width:880px){
+      .session-quicknav{padding:14px 0 16px}
+      .session-quicknav .qn-inner{overflow-x:auto;justify-content:flex-start;flex-wrap:nowrap;padding:0 12px;-webkit-overflow-scrolling:touch;gap:8px}
+      .session-quicknav .qn-inner::-webkit-scrollbar{display:none}
+      .session-quicknav a{font-size:14px;padding:8px 14px;flex:0 0 auto}
+    }
+  </style>
+  <nav class="session-quicknav" aria-label="第三場次快速導覽">
+    <div class="qn-inner">
+      <a class="primary" href="#signup-626">報名參與本論壇</a>
+      <a href="#theme-626">論壇主題</a>
+      <a href="#speakers-626">演講者陣容</a>
+      <a href="#schedule-626">論壇議程</a>
+      <a href="#orgs-626">相關單位</a>
+      <a href="#sponsor-626">廠商贊助</a>
+      <a href="#session-411">歷屆回顧</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-shell">
+          <div class="hero-topline" style="display:grid; grid-template-columns:1fr; gap:12px;">
+            <div class="hero-kicker" style="font-size:16px;font-weight:900;min-height:48px">🏛 指導單位：嘉義縣衛生局</div>
+            <div class="hero-official-line" style="font-size:17px;font-weight:900;min-height:52px">國立中正大學中小企業育成中心 × 全球健康發展協會 × 紐約北方醫學中心</div>
+            <div class="hero-forum-line" style="font-size:16px;font-weight:900;min-height:48px">健康醫學論壇・失智防治 × 逆齡醫學 × 跨界整合</div>
+          </div>
+          <div class="hero-main-title">智匯健康｜腦力長青</div>
+          <div class="hero-forum-title">2026 失智防治與逆齡醫學跨界論壇</div>
+          <div class="hero-meta">
+            <div class="hero-meta-item"><strong>時間</strong>2026 年 6 月 26 日（五）09:30–17:00</div>
+            <div class="hero-meta-item"><strong>地點</strong>國立中正大學創新大樓<br><span style="font-size:13px;color:var(--muted)">嘉義縣民雄鄉三興村7鄰大學路一段168號</span></div>
+            <div class="hero-meta-item"><strong>活動聯繫人</strong>0937-492-923 林秘書</div>
+          </div>
+          <div class="trust-chips" style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <div class="trust-chip"><span class="k">上午場</span><span class="v">09:30–12:00 免費健康諮詢</span></div>
+            <div class="trust-chip"><span class="k">下午場</span><span class="v">13:00–17:00 論壇講座</span></div>
+          </div>
+          <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+            <a class="btn btn-primary" href="#signup-626">報名參與本論壇</a>
+            <a class="btn btn-secondary" href="#theme-626">論壇主題</a>
+            <a class="btn btn-secondary" href="#speakers-626">演講者陣容</a>
+            <a class="btn btn-secondary" href="#schedule-626">論壇議程</a>
+            <a class="btn btn-secondary" href="#orgs-626">相關單位</a>
+            <a class="btn btn-secondary" href="#sponsor-626">廠商贊助</a>
+            <a class="btn btn-secondary" href="#session-411">歷屆回顧</a>
+          </div>
+
+          <div style="margin-top:24px">
+            <h3>論壇亮點</h3>
+            <ul style="margin-top:8px;padding-left:20px;color:var(--muted);font-size:15px;line-height:2">
+              <li>嘉義在地首辦，結合國立大學與國際醫學資源</li>
+              <li>橫跨神經內科、心理健康、音樂療癒、傳統醫學與自然養生</li>
+              <li>上午場免費健康諮詢，讓民眾直接與專業醫師面對面</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">主辦與合作單位</h2>
+      <p class="section-subtitle">本論壇由三個核心單位共同推動，形成學術機構、健康推廣與國際醫學合作的跨界整合。</p>
+      <div class="authority-strip">
+        <div class="authority-item">
+          <div class="logo-image-wrap"><img src="logo-ccu.png" alt="國立中正大學 Logo"></div>
+          <div class="logo-name" style="font-size:14px">國立中正大學<br>中小企業育成中心</div>
+        </div>
+        <div class="authority-item">
+          <div class="logo-image-wrap"><img src="logo-global-health.png" alt="全球健康發展協會 Logo"></div>
+          <div class="logo-name">全球健康發展協會</div>
+        </div>
+        <div class="authority-item">
+          <div class="logo-image-wrap"><img src="logo-northern-medical.png" alt="紐約北方醫學中心 Logo"></div>
+          <div class="logo-name">紐約北方醫學中心</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section" id="theme-626">
+    <div class="container">
+      <div class="quote-card">
+        <div class="quote-tag">論壇主題精神</div>
+        <div class="quote-title">上工治未病</div>
+        <div class="quote-source">——《黃帝內經》</div>
+        <div class="spirit-block">
+          <p>面對失智年輕化的海嘯趨勢，需要「早知道」培養好習慣，即可爭取預防與修復的空間。</p>
+        </div>
+        <div class="spirit-block">
+          <p>國立中正大學中小企業育成中心與全球健康發展協會攜手策劃的失智防治講座，正是以科學驗證成果將古今的智慧，呈現給臺灣社會。</p>
+        </div>
+        <div class="spirit-block">
+          <p>本協會與紐約北方醫學教育基金會密切合作，推廣與實踐四維醫學，並籌建北方醫學與健康學院，感恩中正大學中小企業育成中心的認同，齊為開創大眾事業成功與身心健康兩全其美的境界而奉獻心力。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">活動資訊與參與重點</h2>
+      <p class="section-subtitle">快速掌握本論壇的重要資訊與參與重點。</p>
+      <div class="overview-grid">
+        <div class="card overview-card">
+          <h3>活動資訊</h3>
+          <p>
+            <strong>時間：</strong>2026 年 6 月 26 日（五）09:30–17:00<br>
+            <strong>地點：</strong>國立中正大學創新大樓<br>
+            <span style="font-size:13px;color:var(--muted)">（嘉義縣民雄鄉三興村7鄰大學路一段168號）</span><br>
+            <strong>活動聯繫人：</strong>0937-492-923 林秘書<br>
+            <strong>席次：</strong>200 位<br>
+            <strong>報名費：</strong><span style="color:var(--teal-dark);font-weight:900">免費入場</span>
+          </p>
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://forms.gle/Htk4YENdd5m9rmmG8" target="_blank" rel="noopener noreferrer" style="flex:1;min-width:140px;text-align:center">📌 實體報名表</a>
+            <a class="btn btn-primary" href="https://forms.gle/PHQjjADVXTyVbXGc7" target="_blank" rel="noopener noreferrer" style="flex:1;min-width:140px;text-align:center">📌 線上報名表</a>
+          </div>
+        </div>
+        <div class="card overview-card">
+          <h3>這場論壇適合誰參加？</h3>
+          <p>適合關心失智預防、心理健康、音樂療癒、傳統醫學養生，以及重視家庭健康管理的朋友參加。特別適合：</p>
+          <ul style="margin-top:8px;padding-left:20px;line-height:2;font-size:15px;color:var(--muted)">
+            <li>關注家人健康、重視失智議題的民眾</li>
+            <li>希望了解自然醫學的各界朋友</li>
+            <li>想掌握健康與養生未來趨勢的企業主</li>
+            <li>醫療、照護及健康產業從業人員</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title" id="speakers-626">演講者陣容</h2>
+      <p class="section-subtitle">點擊頭像即可跳到下方演講者詳細介紹。</p>
+      <div class="speaker-grid">
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-song"><div class="speaker-photo"><img src="speaker-song.jpg" alt="宋昇峯 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">嘉義基督教醫院</div>
+            <div class="name">宋昇峯</div>
+            <div class="title">教研副院長｜教育部部定助理教授</div>
+            <div class="topic">主題：決策者的隱形危機</div>
+            <div class="speaker-actions"><a href="#bio-song" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-lin-mj"><div class="speaker-photo"><img src="speaker-lin-mj.jpg" alt="林明傑 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">國立中正大學犯罪防治學系</div>
+            <div class="name">林明傑</div>
+            <div class="title">教授｜諮商心理師・社會工作師</div>
+            <div class="topic">主題：打開心靈 得好眠</div>
+            <div class="speaker-actions"><a href="#bio-lin-mj" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-wu-626"><div class="speaker-photo"><img src="speaker-wu.png" alt="吳啟裕 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">國際醫學科學基金會</div>
+            <div class="name">吳啟裕 博士</div>
+            <div class="title">生化與細胞研究專家｜大健康學院副院長</div>
+            <div class="topic">主題：生技產業在防治失智新藥的努力</div>
+            <div class="speaker-actions"><a href="#bio-wu-626" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-chang"><div class="speaker-photo"><img src="speaker-chang.jpg" alt="張克咸 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">台灣脊椎健康推廣協會</div>
+            <div class="name">張克咸</div>
+            <div class="title">創辦人暨理事長｜自療醫學專家</div>
+            <div class="topic">主題：企業家的宮廷太醫養生之道</div>
+            <div class="speaker-actions"><a href="#bio-chang" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-yang"><div class="speaker-photo"><img src="speaker-yang.jpg" alt="楊尚儒 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">嗨餅乾室內交響樂團</div>
+            <div class="name">楊尚儒</div>
+            <div class="title">中信金融管理學院 助理教授</div>
+            <div class="topic" style="font-size:13px">主題：音樂與腦健康（與陳佩君共同演講）</div>
+            <div class="speaker-actions"><a href="#bio-yang" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-chen"><div class="speaker-photo"><img src="speaker-chen.jpg" alt="陳佩君 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">嗨餅乾室內交響樂團</div>
+            <div class="name">陳佩君</div>
+            <div class="title">團長｜鋼琴演奏碩士</div>
+            <div class="topic" style="font-size:13px">主題：音樂與腦健康（與楊尚儒共同演講）</div>
+            <div class="speaker-actions"><a href="#bio-chen" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <a class="speaker-photo-link" href="#bio-lan-626"><div class="speaker-photo"><img src="speaker-lan.png" alt="藍士哲 頭像"></div></a>
+          <div class="speaker-content">
+            <div class="org">紐約北方醫學中心顧問醫師</div>
+            <div class="name">藍士哲</div>
+            <div class="title">中西醫整合醫師｜中華民國中醫兒科專科醫師</div>
+            <div class="topic">主題：中醫對失智的防治之道</div>
+            <div class="speaker-actions"><a href="#bio-lan-626" class="btn-mini">查看演講者完整資訊</a></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">演講者詳細介紹</h2>
+      <p class="section-subtitle">資料來源為公開網站查詢，演講者學經歷豐富，族繁不及備載。</p>
+      <div class="bio-grid">
+
+        <div class="card bio-card" id="bio-song">
+          <h3>宋昇峯｜學經歷</h3>
+          <p class="bio-intro">現任嘉義基督教醫院教研副院長，並擔任神經內科科主任及醫學研究部主任，具教育部部定助理教授資格。學歷橫跨醫學與資訊管理，具備台大醫院神經內科主治醫師資歷，長期深耕嘉義地區神經內科與失智症防治。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>嘉義基督教醫院 教研副院長</li>
+            <li>神經內科 科主任</li>
+            <li>醫學研究部 主任</li>
+            <li>教育部 部定助理教授</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>台大醫學院醫學系</li>
+            <li>國立中正大學資訊管理學博士</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>台大醫院神經內科主治醫師</li>
+          </ul></div>
+          <div class="bio-section"><h4>專業資格</h4><ul class="bio-list">
+            <li>台灣神經學會會員</li>
+            <li>中華民國醫用超音波學會會員及專業醫師</li>
+            <li>台灣腦中風學會會員</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-lin-mj">
+          <h3>林明傑｜學經歷</h3>
+          <p class="bio-intro">現任國立中正大學犯罪防治學系暨研究所教授，同時具備諮商心理師及社會工作師資格。長期深耕性侵害與家庭暴力加害人治療、再犯風險評估及非暴力溝通，曾將國外專業治療技術引進台灣實務界，自創「好想法鼓勵自尋法」，在矯正輔導領域具有高度影響力。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>國立中正大學犯罪防治學系暨研究所 教授</li>
+            <li>諮商心理師</li>
+            <li>社會工作師</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>美國密西根州立大學 刑事司法犯罪學博士（專攻犯罪者矯正諮商及危險評估）</li>
+            <li>美國密西根州立大學 犯罪學研究所碩士</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>高雄縣家扶中心兒童保護社工員</li>
+            <li>高雄少年中途之家少年輔導員</li>
+            <li>國軍高雄802醫院精神科社會工作師</li>
+            <li>監獄及社區性侵與家庭暴力治療師</li>
+            <li>教育部人權教育專家</li>
+          </ul></div>
+          <div class="bio-section"><h4>專長</h4><ul class="bio-list">
+            <li>性侵害與家庭暴力加害人強制諮商及治療</li>
+            <li>再犯風險評估技術</li>
+            <li>非暴力溝通（善意溝通）</li>
+            <li>藥物／酒精成癮防治</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-wu-626">
+          <h3>吳啟裕 博士｜學經歷</h3>
+          <p class="bio-intro">現任博太生技醫藥股份有限公司植物新藥總經理，並擔任中華自然醫學教育學會理事長，長期投入生化醫學與抗癌研究領域，專注於癌細胞機制與預防醫學應用，兼具產業實務與學術研究背景。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>博太生技醫藥股份有限公司 植物新藥總經理</li>
+            <li>中華自然醫學教育學會 理事長</li>
+            <li>國際醫學科學基金會 大健康學院 副院長</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>陽明大學 生物化學研究所 博士</li>
+            <li>台灣大學 生化科學研究所 碩士</li>
+            <li>台灣大學 化學系 學士</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-chang">
+          <h3>張克咸｜學經歷</h3>
+          <p class="bio-intro">台灣脊椎健康推廣協會創辦人暨首任理事長。二十餘年來鑽研脊椎矯正術、日本礒谷式力學療法與中醫經絡學，三者融會貫通，獨創「無痛整復」方法。曾邀請美國AMCT協會創始人Dr. Fhur來台傳授整脊活化技術，大幅提升台灣脊椎整復水準。曾在北京清華大學與長庚醫院合辦「世界脊髓治療研討會」發表「自療脊椎」原理，著有《太醫學：劉太醫談養生，不生病的活法》（集夢坊，2024）。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>台灣脊椎健康推廣協會 創辦人暨理事長</li>
+          </ul></div>
+          <div class="bio-section"><h4>專長</h4><ul class="bio-list">
+            <li>脊椎矯正術・無痛整復</li>
+            <li>日本礒谷式力學療法</li>
+            <li>中醫經絡學</li>
+            <li>太醫學、氫醫學、量子醫學、遠紅外線應用</li>
+            <li>自療醫學寢具研發</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-yang">
+          <h3>楊尚儒｜學經歷</h3>
+          <p class="bio-intro">現任中信金融管理學院助理教授，具美國亞利桑那大學音樂藝術博士及美國卡森紐曼學院英語教學文學碩士學位。長期投入大台南地區音樂教育，致力於音樂與健康的跨界推廣。與陳佩君團長共同帶領嗨餅乾室內交響樂團，以音樂療癒為核心推廣腦健康。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>中信金融管理學院 助理教授</li>
+            <li>嗨餅乾室內交響樂團</li>
+            <li>BNI 大台南南區真鑽分會</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>美國亞利桑那大學 音樂藝術博士</li>
+            <li>美國卡森紐曼學院 英語教學文學碩士</li>
+          </ul></div>
+          <div class="bio-section"><h4>重要經歷</h4><ul class="bio-list">
+            <li>台南市大成國中音樂藝術才能班外聘小提琴老師</li>
+            <li>台南市永福國小音樂藝術才能班外聘小提琴老師</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-chen">
+          <h3>陳佩君｜學經歷</h3>
+          <p class="bio-intro">嗨餅乾室內交響樂團團長，國立臺南藝術大學音樂學系鋼琴演奏碩士。擁有多年豐富的鋼琴教學資歷，著重因材施教，擅長融合古典基礎與流行音樂。積極投入跨界藝文活動，曾任多場藝文論壇與展演的音樂藝術策展人（如「宇宙與人間」系列展演），長期活躍於大台南地區音樂教育與社區推廣。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>嗨餅乾室內交響樂團 團長</li>
+            <li>BNI 大台南南區 真誠分會</li>
+            <li>BNI 大台南南區 創會大使</li>
+          </ul></div>
+          <div class="bio-section"><h4>學歷</h4><ul class="bio-list">
+            <li>國立臺南藝術大學 音樂學系 鋼琴演奏碩士</li>
+          </ul></div>
+          <div class="bio-section"><h4>專長</h4><ul class="bio-list">
+            <li>鋼琴教學（個別指導、成人鋼琴、樂理教學）</li>
+            <li>音樂藝術策展</li>
+            <li>社區團體音樂教學・樂器挑選</li>
+          </ul></div>
+        </div>
+
+        <div class="card bio-card" id="bio-lan-626">
+          <h3>藍士哲｜學經歷</h3>
+          <p class="bio-intro">現任中醫院院長，畢業於長庚大學中醫學系，具備中西醫雙重醫師資格，專注於中西醫整合治療，涵蓋腸胃內科、兒童成長、針灸醫學與功能性醫療領域。</p>
+          <div class="bio-section"><h4>現職</h4><ul class="bio-list">
+            <li>中醫院院長</li>
+            <li>中西醫整合醫師</li>
+            <li>紐約北方醫學中心顧問醫師</li>
+          </ul></div>
+          <div class="bio-section"><h4>學經歷</h4><ul class="bio-list">
+            <li>長庚大學中醫系 中西醫師</li>
+            <li>台北市立聯合醫院林森中醫院區 中醫師</li>
+            <li>百合馬光中醫診所 資深主治醫師</li>
+            <li>中華民國中醫兒科專科醫師</li>
+            <li>顏面針灸醫學會認證專科醫師</li>
+          </ul></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule-626">
+    <div class="container">
+      <h2 class="section-title">完整論壇議程</h2>
+      <p class="section-subtitle">2026 年 6 月 26 日（五）論壇全天流程。</p>
+      <div class="schedule-wrap">
+        <div class="schedule-item"><div class="schedule-time">09:00–09:30</div><div class="schedule-main"><h4>報到</h4><p>來賓入場與報到</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">論壇正式開始前完成報到與入席。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">09:30–12:00</div><div class="schedule-main"><h4>免費健康諮詢</h4><p>上午場 — 多位專業醫師駐場提供免費諮詢</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">失智風險評估、神經內科、中醫諮詢等多項服務。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">12:00–13:00</div><div class="schedule-main"><h4>午餐</h4><p>午餐交流時間</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">休息與交流。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">13:00–13:30</div><div class="schedule-main"><h4>致詞</h4><p>論壇開場與貴賓致詞</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">主辦、指導單位代表致詞。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">13:30–14:00</div><div class="schedule-main"><h4>決策者的隱形危機</h4><p>企業主必備的失智識能與應對策略</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">宋昇峯 副院長</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">14:00–14:30</div><div class="schedule-main"><h4>打開心靈 得好眠</h4><p>睡眠、心理健康與失智預防的關聯</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">林明傑 教授</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">14:30–14:50</div><div class="schedule-main"><h4>休息時間</h4><p>Coffee Break</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">中場休息與交流。</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">14:50–15:20</div><div class="schedule-main"><h4>生技產業在防治失智新藥的努力</h4><p>從生技與產業端看失智防治新藥的最新進展</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">吳啟裕 博士</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">15:20–15:50</div><div class="schedule-main"><h4>企業家的宮廷太醫養生之道</h4><p>融合太醫學、脊椎矯正與自療醫學的整合養生觀</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">張克咸 理事長</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">15:50–16:20</div><div class="schedule-main"><h4>音樂與腦健康</h4><p>音樂如何影響大腦、舒緩壓力、預防失智</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">楊尚儒 教授・陳佩君 團長</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">16:20–16:50</div><div class="schedule-main"><h4>中醫對失智的防治之道</h4><p>中醫觀點的失智預防與身心整合調理</p></div><div class="schedule-side"><div class="label">演講者</div><div class="value">藍士哲 中醫師</div></div></div>
+        <div class="schedule-item"><div class="schedule-time">16:50–17:00</div><div class="schedule-main"><h4>結語</h4><p>論壇總結與閉幕</p></div><div class="schedule-side"><div class="label">備註</div><div class="value">Closing Remarks</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title" id="orgs-626">主辦、協辦與指導單位</h2>
+      <div class="org-grid">
+        <div class="card org-card">
+          <h3>指導單位</h3>
+          <ul><li>嘉義縣衛生局</li></ul>
+        </div>
+        <div class="card org-card">
+          <h3>主辦單位</h3>
+          <ul>
+            <li>國立中正大學中小企業育成中心</li>
+            <li>全球健康發展協會</li>
+            <li>紐約北方醫學中心</li>
+          </ul>
+        </div>
+        <div class="card org-card">
+          <h3>協辦單位</h3>
+          <ul>
+            <li>嘉義大學</li>
+            <li>嘉義縣產業文化教育協會</li>
+            <li>紐約飛天大學北方分校</li>
+            <li>北方醫學與健康科學基金會</li>
+            <li>紐約橙縣台灣同鄉會</li>
+            <li>Hudson Valley Asian American Chamber of Commerce</li>
+            <li>Crystal Windows &amp; Doors USA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signup-626">
+    <div class="container">
+      <div class="card" style="padding:40px;text-align:center;border-radius:var(--radius-lg)">
+        <h2 class="section-title" style="font-size:30px;margin-bottom:8px">報名 6 月 26 日場次</h2>
+        <p class="section-subtitle" style="margin-bottom:6px">入場免費，席次 200 位，額滿為止。</p>
+        <p class="section-subtitle" style="margin-bottom:24px">如有任何問題，歡迎聯繫 0937-492-923 林秘書。</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-primary" href="https://forms.gle/Htk4YENdd5m9rmmG8" target="_blank" rel="noopener noreferrer" style="min-width:180px">📌 實體報名表</a>
+          <a class="btn btn-primary" href="https://forms.gle/PHQjjADVXTyVbXGc7" target="_blank" rel="noopener noreferrer" style="min-width:180px">📌 線上報名表</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title" id="sponsor-626">贊助廠商設攤權利義務</h2>
+      <p class="section-subtitle">這不只是設攤，而是讓廠商在精準族群面前建立信任、說清解方，真正把曝光變成合作機會。</p>
+      <div class="sponsor-power-grid">
+        <div class="card sponsor-power-card">
+          <span class="sponsor-badge">老客戶・贊助夥伴專屬方案</span>
+          <div class="sponsor-price">NT$30,000</div>
+          <h3>設攤 ＋ 五分鐘解方提案短講</h3>
+          <p>適合有產品、有解方、有理念的品牌。透過短講快速建立專業形象，讓潛在客戶在短時間內理解你能解決什麼問題。</p>
+          <span class="sponsor-tagline">適合：希望同時拿到曝光、互動、信任與後續成交機會的廠商</span>
+          <ul class="sponsor-list">
+            <li>現場設攤展示，提升品牌可見度</li>
+            <li>五分鐘上台短講，直接說明你的解方</li>
+            <li>接觸 200 位對健康高度關注的精準受眾</li>
+          </ul>
+          <a class="btn btn-primary" href="tel:0937492923" style="margin-top:16px;display:inline-block">📞 聯繫林秘書洽詢</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card" style="padding:36px;text-align:center;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--soft),#fff)">
+        <h2 class="section-title" style="font-size:24px;margin-bottom:8px">加入全球健康發展協會</h2>
+        <p class="section-subtitle" style="margin-bottom:20px">關注失智防治、逆齡醫學與跨界健康整合，歡迎申請入會，與我們一同推廣健康。</p>
+        <a class="btn btn-primary" href="https://forms.gle/NjhHmEwxCUrw8FBW8" target="_blank" rel="noopener noreferrer">🔗 全球健康發展協會申請入會表單</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 成長足跡 ══ -->
+  <div class="session-divider" id="session-411" style="background:linear-gradient(135deg,#2a3f5f 0%,#1a5c63 100%)">
+    <div class="container">
+      <div class="session-divider-inner">
+        <span class="session-divider-badge">成長足跡</span>
+        <div class="session-divider-title">智匯健康｜腦力長青・歷屆回顧</div>
+        <div class="session-divider-sub">全球健康發展協會攜手紐約北方醫學中心，持續推動失智防治與逆齡醫學的跨界整合</div>
+        <div class="fp-links" style="margin-top:16px;justify-content:center">
+          <a class="btn btn-secondary" href="https://www.worldhealth.org.tw/" target="_blank" rel="noopener noreferrer" style="color:#fff;border-color:rgba(255,255,255,.4)">協會官網</a>
+          <a class="btn btn-secondary" href="https://www.facebook.com/worldhealth.orgtw/videos/" target="_blank" rel="noopener noreferrer" style="color:#fff;border-color:rgba(255,255,255,.4)">Facebook 影音</a>
+          <a class="btn btn-secondary" href="https://forms.gle/NjhHmEwxCUrw8FBW8" target="_blank" rel="noopener noreferrer" style="color:#fff;border-color:rgba(255,255,255,.4)">申請入會</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding:56px 0">
+    <div class="container">
+      <div class="footprint-grid">
+
+        <div class="footprint-card">
+          <div class="footprint-header">
+            <span class="fp-badge">第一場</span>
+            <h3>2025 年 12 月 6 日</h3>
+            <div class="fp-sub">桃園福容飯店｜企業必修健康課</div>
+          </div>
+          <div class="footprint-body">
+            <h4>媒體報導</h4>
+            <ul class="news-list">
+              <li><a href="https://www.epochtimes.com/b5/25/12/7/n14650352.htm" target="_blank" rel="noopener noreferrer"><span class="media-tag">大紀元</span>紐約北方醫學中心首度在台舉辦健康研討會</a></li>
+              <li><a href="https://www.peopo.org/news/831473" target="_blank" rel="noopener noreferrer"><span class="media-tag">PeoPo 公民新聞</span>紐約北方醫學中心 首度在台舉辦健康研討會</a></li>
+              <li><a href="https://readfi.news/33457/" target="_blank" rel="noopener noreferrer"><span class="media-tag">卓越電子報</span>紐約北方醫學中心首辦台灣健康研討會</a></li>
+              <li><a href="http://www.pacificnews.com.tw/shownews.php?postnewsid=17&titleid=176" target="_blank" rel="noopener noreferrer"><span class="media-tag">太平洋新聞網</span>紐約北方醫學中心在台舉辦健康研討會</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footprint-card">
+          <div class="footprint-header">
+            <span class="fp-badge">第二場</span>
+            <h3>2026 年 4 月 11 日</h3>
+            <div class="fp-sub">高雄榮民總醫院｜失智防治與逆齡醫學跨界論壇</div>
+          </div>
+          <div class="footprint-body">
+            <h4>媒體報導</h4>
+            <ul class="news-list">
+              <li><a href="https://www.epochtimes.com/b5/26/4/12/n14740087.htm" target="_blank" rel="noopener noreferrer"><span class="media-tag">大紀元</span>2026失智防治與逆齡醫學論壇 跨界繪製健康老化新藍圖</a></li>
+              <li><a href="https://more-news.tw/582409/" target="_blank" rel="noopener noreferrer"><span class="media-tag">屏東時報</span>失智預防跨界論壇　打造台灣健康產業新入口</a></li>
+              <li><a href="https://freshweekly.tw/?pn=vw&id=07vc17wk48ne" target="_blank" rel="noopener noreferrer"><span class="media-tag">鮮週報</span>全球健康發展協會攜手紐約北方醫學中心跨界論壇 聚焦失智防治與逆齡醫學</a></li>
+              <li><a href="https://www.ydn.com.tw/tw/News/ugC_News_Detail.aspx?ID=632969" target="_blank" rel="noopener noreferrer"><span class="media-tag">青年日報</span>2026 失智防治與逆齡醫學跨界論壇報導</a></li>
+              <li><a href="https://leho.com.tw/archives/283404" target="_blank" rel="noopener noreferrer"><span class="media-tag">樂活新聞</span>2026 失智防治與逆齡醫學跨界論壇報導</a></li>
+              <li><a href="https://readfi.news/tag/%E5%85%A8%E7%90%83%E5%81%A5%E5%BA%B7%E7%99%BC%E5%B1%95%E5%8D%94%E6%9C%83/" target="_blank" rel="noopener noreferrer"><span class="media-tag">卓越電子報</span>全球健康發展協會相關報導合集</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <section class="hero">
     <div class="container">
@@ -1662,10 +2448,27 @@
     </div>
   </section>
 
+  <!-- 場次切換列 -->
+  <nav class="session-nav">
+    <div class="container">
+      <span class="session-nav-label">場次選擇</span>
+      <a class="session-btn active" href="#session-626">6 月 26 日</a>
+      <a class="session-btn" href="#session-411">成長足跡・4 月 11 日</a>
+    </div>
+  </nav>
   <footer>
-    智匯健康｜腦力長青・2026 失智防治與逆齡醫學跨界論壇
+    智匯健康｜腦力長青・2026 論壇系列
   </footer>
 
+  <button id="back-to-top" title="回到頂部" onclick="document.getElementById('top').scrollIntoView({behavior:'smooth'})">▲</button>
+
+  <script>
+    window.addEventListener('scroll', function(){
+      var btn = document.getElementById('back-to-top');
+      if(window.scrollY > 400){ btn.classList.add('visible'); }
+      else{ btn.classList.remove('visible'); }
+    });
+  </script>
   <script>
     function updateCountdown(){
       const target = new Date("2026-04-11T09:00:00").getTime();
